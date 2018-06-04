@@ -44,8 +44,6 @@
   Plug 'scrooloose/nerdcommenter'
 " Auto pairs completion in brackets
   Plug 'jiangmiao/auto-pairs'
-" Formating code
-  " Plug 'sbdchd/neoformat'
 " Autocomplete code for web
   Plug 'mattn/emmet-vim'
 " Autocompletion general lenguages
@@ -61,6 +59,8 @@
   Plug 'gorodinskiy/vim-coloresque'
 " Better syntax CSS
   Plug 'hail2u/vim-css3-syntax'
+" Format scss
+  Plug 'cakebaker/scss-syntax.vim'
 " Complete for JS
   Plug 'marijnh/tern_for_vim'
 
