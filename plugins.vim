@@ -63,6 +63,8 @@
   Plug 'cakebaker/scss-syntax.vim'
 " Complete for JS
   Plug 'marijnh/tern_for_vim'
+" JS syntax highlighting and improved indentation
+  Plug 'pangloss/vim-javascript'
 
 call plug#end()
 

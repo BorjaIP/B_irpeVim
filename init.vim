@@ -58,9 +58,19 @@
   " let g:ycm_min_num_identifier_candidate_chars = 4
   " let g:ycm_enable_diagnostic_highlighting = 0
 
+" Enhance YCM JS completion with tern's smarts
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+
 " Don't show YCM's preview window
   set completeopt-=preview
   let g:ycm_add_preview_to_completeopt = 0
+
+" Add typescript at YCM 
+  if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+  endif
+
+  let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " ------------------------------ NERDCommenter  -------------------------------
 
