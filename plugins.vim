@@ -15,20 +15,19 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'dracula/vim'
 
 " ------------------------------  Interface ------------------------------  
+
 " NerdTree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Airline (Bottom line)
 Plug 'bling/vim-airline'
-" Show interactive line numbers
-" Plug 'myusuf3/numbers.vim'
 " Awesome icons
 Plug 'ryanoasis/vim-devicons'
 " Awesome start display
 Plug 'mhinz/vim-startify'
 " Shows git diff in the numbers line
 Plug 'airblade/vim-gitgutter'
-" Shows a line with the indent of the line
+" Show indent line with a marker 
 Plug 'yggdroot/indentline'
 " Fuzzy finder files
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -40,15 +39,17 @@ Plug 'roman/golden-ratio'
 
 " ------------------------------ Code Display ------------------------------  
 
+" Delete, change and add such surroundings in pairs
+Plug 'tpope/vim-surround'
 " Commenting pluggin
 Plug 'scrooloose/nerdcommenter'
 " Auto pairs completion in brackets
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 " Autocomplete code for web
 Plug 'mattn/emmet-vim'
 " Autocompletion general lenguages
 Plug 'Valloric/YouCompleteMe'
-" Snippets files for various programming languages (generate code)
+" Snippets files for some programming languages (generate code)
 Plug 'honza/vim-snippets'
 " Solution for snippets (generate code)
 Plug 'sirver/ultisnips'
@@ -64,10 +65,7 @@ Plug 'hail2u/vim-css3-syntax'
 " Format scss
 Plug 'cakebaker/scss-syntax.vim'
 " Complete for JS
-" Plug 'marijnh/tern_for_vim'
 Plug 'ternjs/tern_for_vim'
-" Syntax in JS
-" Plug 'jelera/vim-javascript-syntax'
 " JS syntax highlighting and improved indentation
 Plug 'pangloss/vim-javascript'
 " Syntax file and other settings for TypeScript
@@ -78,4 +76,3 @@ Plug 'moll/vim-node'
 Plug 'elzr/vim-json'
 
 call plug#end()
-

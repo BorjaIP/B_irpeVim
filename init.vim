@@ -20,25 +20,16 @@ source ~/.config/nvim/shortcuts.vim
 " Use Vim defaults
 set nocompatible
 
-" Encoding displayed in utf-8
+" Encoding displayed and written to file in utf-8
 scriptencoding utf-8
 set encoding=utf-8
+set fileencoding=utf-8
 
 " Neovim color support for true 
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Color Neovim
+set t_Co=256
 colorscheme dracula
-
-" This will start Startify
-autocmd VimEnter * if !argc() | Startify | wincmd w | endif
-
-" Remember cursor position between vim sessions
-autocmd BufReadPost *
-      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-      \   exe "normal! g'\"" |
-      \ endif
-" Center buffer around cursor when opening files
-autocmd BufRead * normal zz
 
 " The current buffer can be put to the background without writing to disk
 set hidden
@@ -48,7 +39,7 @@ set hidden
 " Enable syntax highlighting
 syntax on
 " Show line numbers
-set number
+set number relativenumber
 " Show matching brackets.
 set showmatch
 " Bracket blinking.
@@ -65,11 +56,27 @@ set smarttab
 " Default shift width for indents
 set shiftwidth=2
 
-" ------------------------------  Plugins Settings ---------------------------
 
+"Change indentline
+let g:indentLine_char = '┆'
+
+" ------------------------------ Autocommands and Fyletype --------------------
+
+" Filetypes
 filetype on
 filetype plugin on
 filetype indent on
+
+" This will start Startify
+autocmd VimEnter * if !argc() | Startify | wincmd w | endif
+
+" Remember cursor position between vim sessions
+autocmd BufReadPost *
+      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+      \   exe "normal! g'\"" |
+      \ endif
+" Center buffer around cursor when opening files
+autocmd BufRead * normal zz
 
 " BASH / ZSH support
 autocmd FileType sh setlocal shiftwidth=4 tabstop=4 softtabstop=4
@@ -78,9 +85,8 @@ autocmd FileType sh set keywordprg=man
 " Java/HTML/JS support
 autocmd FileType java,html,javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" JSON support
 au! BufRead,BufNewFile *.json set filetype=json
-" Show correct syntax on JSON
-let g:vim_json_syntax_conceal = 0
 
 " ------------------------------  YouCompleteMe  ------------------------------
 
@@ -107,12 +113,17 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " Add support snippets for JS
 autocmd FileType js UltiSnipsAddFiletypes javascript-jasmine
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="j<tab>"
+
+" Show correct syntax on JSON
+let g:vim_json_syntax_conceal = 0
 
 " ------------------------------ NERDCommenter  -------------------------------
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
 
 " ------------------------------     Emmet    ----------------------------------
 
